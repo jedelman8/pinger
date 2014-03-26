@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 
 '''
-This is a basic srcipt that pings any number of remote IP Addresses from a source router.
+This is script pings any number of remote IP Addresses from a source router.
 This currently uses Cisco onePK via the CPAL package to connect to the source router.
 '''
+
 import sys
 from cpal.core.main import device
 
@@ -27,3 +28,21 @@ if __name__ == "__main__":
 	cping(source,dests)
 
 
+'''
+SAMPLE OUTPUT WHEN RUNNING THE PROGRAM
+
+cisco@onepk:~/apps/pinger$ python pinger.py
+
+-----------------------------------------------------
+SOURCE: 10.1.1.110 DESTINATION: 10.1.1.110
+Success rate is 100 percent (5/5)
+-----------------------------------------------------
+-----------------------------------------------------
+SOURCE: 10.1.1.110 DESTINATION: 10.1.1.120
+Success rate is 100 percent (5/5)
+-----------------------------------------------------
+-----------------------------------------------------
+SOURCE: 10.1.1.110 DESTINATION: 10.1.1.130
+Success rate is 100 percent (5/5)
+-----------------------------------------------------
+'''
